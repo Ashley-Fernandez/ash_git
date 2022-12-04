@@ -1,0 +1,84 @@
+/* Queue Algorithm
+* Step 1: start
+* Step 2: declare a queue of maxsize 10
+* Step 3: let front =-1 and rear =-1
+* Step 4: declare function Enqueue()
+            if rear=maxsize-1
+                queue is full
+            else
+                adds new variable to the queue
+                rear++
+* Step 5: declare function Dequeue()
+            if (front=-1 and rear=-1 || front>rear)
+                queue is empty
+            else
+                delete the front elements from the queue
+                front++
+* Step 6: Make a function display() to display all elements
+* Step 7: stop
+*/
+
+
+#include<stdio.h>
+# define size 5
+int queue[size];
+int front=-1,rear=-1;
+int main()
+{
+    int ch;
+    printf("\n 1. Enqueue ");
+    printf("\n 2. Dequeue ");
+    printf("\n 3. Display ");
+    printf("\n 4. Exit ");
+    while(1)
+    {
+        printf("\n Enter your chioce: ");
+        scanf("%d",&ch);
+        switch(ch)
+        {
+            case 1: Enqueue();
+                    break;
+            case 2: Dequeue();
+                    break;
+            case 3: display();
+                    break;
+            case 4: exit(0);
+            default: printf("\nInvalid choice!!!");
+        }
+    }
+}
+
+void Enqueue()
+{
+    int ele;
+    if(rear==size-1)
+        printf("\nQueue is full");
+    else
+    {
+        if(front=-1)
+            front=0;
+        printf("\nEnter element to be inserted: ");
+        scanf("%d",&ele);
+        queue[++rear] = ele;
+    }
+}
+
+void Dequeue()
+{
+    if(front==-1||front>rear)
+        printf("Queue is Empty!!!");
+    else
+        printf("Element deleted from the Queue: %d",queue[front++]);
+}
+
+void display()
+{
+    if(front==-1)
+        printf("Queue is Empty!!!");
+    else
+    {
+        printf("Queue: \n");
+        for(int i=front; i<=rear; i++)
+            printf("%d ",queue[i]);
+    }
+}
